@@ -17,6 +17,7 @@
   background-color: var(--black);
   color: var(--white);
   border: 2px solid var(--off-white);
+  opacity: 80%;
 }
 
 .translation {
