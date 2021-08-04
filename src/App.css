@@ -39,4 +39,5 @@
 
 .recent-search-item {
   margin-right: 1vw;
+  cursor: pointer;
 }
