@@ -2,7 +2,7 @@
 
 Hey there, want to know what that flag emoji which everyone is reacting with means ? Or are you a fellow flag admirer ?
 
-Well whichever category you might fall into, 'Flag Mania' can help you in getting a quick idea of what that flag represents, and whether you should engage in a conversation where the flag is being used.
+Well whichever category you might fall into, **[Flag Mania](https://flagmania.netlify.app)** can help you in getting a quick idea of what that flag represents, and whether you should engage in a conversation where the flag is being used.
 
 **_Search for your favourite flag emoji and/or access your recent ones._**
 
