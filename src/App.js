@@ -43,14 +43,15 @@ function App() {
         addToRecent(userInput);
         console.log(recentFlagSearches);
       } else {
-        setTranslatedText("❝ Invalid Flag ❞");
+        setTranslatedText("❝ Flag not found❞");
       }
     }
   };
 
-  const translateRecent = (event) => {
+  const translateOnClick = (event) => {
     let userInput = event.target.innerText;
     setTranslatedText(flags[userInput]);
+    addToRecent(userInput);
   };
 
   return (
@@ -63,22 +64,68 @@ function App() {
         placeholder="Enter your flag here"
       />
       <p className="translation">{translatedText}</p>
+
+      <div>
+        <h3 className="popular-searches-label">Popular searches - </h3>
+        <p className="popular-searches">
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇮🇳
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇺🇸
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇨🇳
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇯🇵
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇷🇺
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇦🇺
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🇨🇦
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🏴‍☠️
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🏁
+          </span>
+
+          <span className="popular-search-item" onClick={translateOnClick}>
+            🏳️
+          </span>
+        </p>
+      </div>
+
       <div>
         <h3 className="recent-searches-label">Recent searches - </h3>
         <p className="recent-searches">
-          <span className="recent-search-item" onClick={translateRecent}>
+          <span className="recent-search-item" onClick={translateOnClick}>
             {recentFlagSearches[recentFlagSearches.length - 1]}
           </span>
-          <span className="recent-search-item" onClick={translateRecent}>
+          <span className="recent-search-item" onClick={translateOnClick}>
             {recentFlagSearches[recentFlagSearches.length - 2]}
           </span>
-          <span className="recent-search-item" onClick={translateRecent}>
+          <span className="recent-search-item" onClick={translateOnClick}>
             {recentFlagSearches[recentFlagSearches.length - 3]}
           </span>
-          <span className="recent-search-item" onClick={translateRecent}>
+          <span className="recent-search-item" onClick={translateOnClick}>
             {recentFlagSearches[recentFlagSearches.length - 4]}
           </span>
-          <span className="recent-search-item" onClick={translateRecent}>
+          <span className="recent-search-item" onClick={translateOnClick}>
             {recentFlagSearches[recentFlagSearches.length - 5]}
           </span>
         </p>

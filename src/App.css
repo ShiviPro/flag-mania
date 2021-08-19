@@ -25,19 +25,22 @@
   font-size: 1.5rem;
 }
 
-.recent-searches-label {
+.recent-searches-label,
+.popular-searches-label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0;
 }
 
-.recent-searches {
+.recent-searches,
+.popular-searches {
   font-size: 3rem;
   margin: 0 auto;
   padding: 10px;
 }
 
-.recent-search-item {
+.recent-search-item,
+.popular-search-item {
   margin-right: 1vw;
   cursor: pointer;
 }
