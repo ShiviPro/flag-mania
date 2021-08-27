@@ -41,7 +41,6 @@ function App() {
       if (isFlagFound) {
         setTranslatedText(flags[userInput]);
         addToRecent(userInput);
-        console.log(recentFlagSearches);
       } else {
         setTranslatedText("❝ Flag not found❞");
       }
