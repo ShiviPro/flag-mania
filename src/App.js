@@ -2,36 +2,32 @@ import { useState } from "react";
 import "./App.css";
 import flags from "./data/flag_data";
 
-function App() {
-  var [translatedText, setTranslatedText] = useState(
+const App = () => {
+  const [translatedText, setTranslatedText] = useState(
     "❝ Translation will appear here ❞"
   );
 
-  var [recentFlagSearches, setRecentFlagSearches] = useState([]);
+  const [recentFlagSearches, setRecentFlagSearches] = useState([]);
 
-  const addToRecent = (userInput) => {
+  const addToRecent = userInput => {
     let isAlreadyRecent = false;
-    recentFlagSearches.forEach((recentFlagSearch, recentnessIndex) => {
-      if (recentFlagSearch === userInput) {
-        isAlreadyRecent = true;
-      }
-    });
+    recentFlagSearches.forEach(recentFlagSearch => 
+      recentFlagSearch === userInput ? isAlreadyRecent = true : null);
     if (!isAlreadyRecent) {
       recentFlagSearches.push(userInput);
+      setRecentFlagSearches(recentFlagSearches);
     }
-    setRecentFlagSearches(recentFlagSearches);
   };
 
-  const translateFlag = (event) => {
-    let userInput = event.target.value.trim();
+  const translateFlag = event => {
+    const userInput = event.target.value.trim();
 
-    if (userInput === "") {
-      setTranslatedText("❝ Translation will appear here ❞");
-    } else {
+    if (userInput === "") setTranslatedText("❝ Translation will appear here ❞");
+    else {
       const allFlags = Object.keys(flags);
       let isFlagFound = false;
       for (let flagIndex = 0; flagIndex < allFlags.length; flagIndex++) {
-        let flag = allFlags[flagIndex];
+        const flag = allFlags[flagIndex];
         if (flag === userInput) {
           isFlagFound = true;
           break;
@@ -41,14 +37,12 @@ function App() {
       if (isFlagFound) {
         setTranslatedText(flags[userInput]);
         addToRecent(userInput);
-      } else {
-        setTranslatedText("❝ Flag not found❞");
-      }
+      } else setTranslatedText("❝ Flag not found❞");
     }
   };
 
-  const translateOnClick = (event) => {
-    let userInput = event.target.innerText;
+  const translateOnClick = event => {
+    const userInput = event.target.innerText;
     setTranslatedText(flags[userInput]);
     addToRecent(userInput);
   };
